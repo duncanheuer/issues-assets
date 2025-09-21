@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Codes - Issues Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="qrcodes.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="nav-item" onclick="window.location.href='index.html'">Issues</div>
+            <div class="nav-item" onclick="window.location.href='categories.html'">Categories</div>
+            <div class="nav-item active">QR codes</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <div class="user-avatar">🔥</div>
+                    <div class="user-info">
+                        <div class="user-name">Duncan Asset...</div>
+                        <div class="user-role">Duncan Heuer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Search</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">AI Assistant</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Notifications</span>
+                        <span class="notification-badge">999</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Templates</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Inspections</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Schedules</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">Actions</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Training</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Assets</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Contractors</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                        <span class="new-badge">NEW</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Documents</span>
+                    </a>
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">⚠️</span>
+                        <span class="nav-text">Issues</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Investigations</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">❓</span>
+                        <span class="nav-text">Help</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Duncan Assets ...</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>QR codes</h1>
+                <button class="btn-primary" id="createQRBtn">
+                    <span>+ Create QR code</span>
+                </button>
+            </div>
+
+            <div class="qrcodes-container">
+                <!-- Search and Filter Bar -->
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="qrCodeSearch" placeholder="Search">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <button class="add-filter-btn" id="addFilterBtn">
+                        <span class="plus-icon">+</span>
+                        <span>Add filter</span>
+                    </button>
+                </div>
+
+                <!-- QR Codes Table -->
+                <div class="qrcodes-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="sortable name-column" data-sort="name">
+                                    <span>Name</span>
+                                </th>
+                                <th class="sortable created-column" data-sort="created">
+                                    <span>Created at</span>
+                                    <span class="sort-arrow">↓</span>
+                                </th>
+                                <th class="site-column">Site</th>
+                                <th class="asset-column">Asset</th>
+                                <th class="category-column">Category</th>
+                                <th class="actions-column"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="qrCodesTableBody">
+                            <tr class="qrcode-row" data-id="maintenance-qr">
+                                <td class="qrcode-name">
+                                    <div class="qrcode-info">
+                                        <span class="qrcode-icon">📱</span>
+                                        <span class="qrcode-title">Maintenance</span>
+                                    </div>
+                                </td>
+                                <td class="qrcode-created">16 Aug 2024 14:41</td>
+                                <td class="qrcode-site"></td>
+                                <td class="qrcode-asset">
+                                    <span class="asset-tag">Vehicle 001</span>
+                                </td>
+                                <td class="qrcode-category">
+                                    <span class="category-tag maintenance">Maintenance</span>
+                                </td>
+                                <td class="qrcode-actions">
+                                    <button class="action-menu-btn" data-id="maintenance-qr">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="qrcode-row" data-id="duncan-assets-demo">
+                                <td class="qrcode-name">
+                                    <div class="qrcode-info">
+                                        <span class="qrcode-icon">📱</span>
+                                        <span class="qrcode-title">Duncan Assets - Demo Account QR code</span>
+                                    </div>
+                                </td>
+                                <td class="qrcode-created">13 Apr 2022 10:08</td>
+                                <td class="qrcode-site"></td>
+                                <td class="qrcode-asset"></td>
+                                <td class="qrcode-category"></td>
+                                <td class="qrcode-actions">
+                                    <button class="action-menu-btn" data-id="duncan-assets-demo">⋯</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State (hidden by default) -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-icon">📱</div>
+                    <h3>No QR codes found</h3>
+                    <p>Create your first QR code to get started</p>
+                    <button class="btn-primary" onclick="document.getElementById('createQRBtn').click()">
+                        <span>+ Create QR code</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create QR Code Side Panel -->
+    <div class="side-panel-overlay" id="sidePanelOverlay" style="display: none;"></div>
+    <div class="side-panel" id="createQRPanel">
+        <div class="side-panel-header">
+            <h2>Create issue QR code</h2>
+            <button class="close-panel-btn" id="closePanelBtn">×</button>
+        </div>
+        
+        <form class="side-panel-content" id="createQRForm">
+            <div class="form-group">
+                <label class="form-label" for="qrCodeName">
+                    QR code name <span class="required">*</span>
+                </label>
+                <input type="text" class="form-input" id="qrCodeName" placeholder="Add name" required>
+            </div>
+            
+            <div class="form-group">
+                <div class="field-tile" id="categoryTile">
+                    <div class="tile-header">
+                        <label class="tile-label">Category</label>
+                        <div class="pre-fill-toggle">
+                            <span class="toggle-label">Pre-fill</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="preFillCategory">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <button type="button" class="info-btn" title="Pre-fill information">ℹ️</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="field-tile" id="siteTile" style="display: none;">
+                    <div class="tile-header">
+                        <label class="tile-label">Site</label>
+                        <div class="pre-fill-toggle">
+                            <span class="toggle-label">Pre-fill</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="preFillSite">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <button type="button" class="info-btn" title="Pre-fill information">ℹ️</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="field-tile" id="assetTile" style="display: none;">
+                    <div class="tile-header">
+                        <label class="tile-label">Asset</label>
+                        <div class="pre-fill-toggle">
+                            <span class="toggle-label">Pre-fill</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="preFillAsset">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <button type="button" class="info-btn" title="Pre-fill information">ℹ️</button>
+                        </div>
+                    </div>
+                    <div class="selector-container" id="assetSelectorContainer" style="display: none;">
+                        <div class="multi-select-container">
+                            <div class="search-input-container">
+                                <input type="text" class="asset-search-input" id="assetSearchInput" placeholder="Search assets...">
+                                <span class="search-icon">🔍</span>
+                            </div>
+                            
+                            <div class="selected-assets" id="selectedAssets" style="display: none;">
+                                <div class="selected-assets-label">Selected assets:</div>
+                                <div class="selected-assets-list" id="selectedAssetsList"></div>
+                            </div>
+                            
+                            <div class="asset-options" id="assetOptions">
+                                <div class="asset-option" data-value="vehicle-001">
+                                    <input type="checkbox" id="asset-vehicle-001" class="asset-checkbox">
+                                    <label for="asset-vehicle-001">Vehicle 001</label>
+                                </div>
+                                <div class="asset-option" data-value="vehicle-002">
+                                    <input type="checkbox" id="asset-vehicle-002" class="asset-checkbox">
+                                    <label for="asset-vehicle-002">Vehicle 002</label>
+                                </div>
+                                <div class="asset-option" data-value="equipment-drill-01">
+                                    <input type="checkbox" id="asset-equipment-drill-01" class="asset-checkbox">
+                                    <label for="asset-equipment-drill-01">Equipment - Drill 01</label>
+                                </div>
+                                <div class="asset-option" data-value="equipment-drill-02">
+                                    <input type="checkbox" id="asset-equipment-drill-02" class="asset-checkbox">
+                                    <label for="asset-equipment-drill-02">Equipment - Drill 02</label>
+                                </div>
+                                <div class="asset-option" data-value="safety-kit-01">
+                                    <input type="checkbox" id="asset-safety-kit-01" class="asset-checkbox">
+                                    <label for="asset-safety-kit-01">Safety Kit 01</label>
+                                </div>
+                                <div class="asset-option" data-value="safety-kit-02">
+                                    <input type="checkbox" id="asset-safety-kit-02" class="asset-checkbox">
+                                    <label for="asset-safety-kit-02">Safety Kit 02</label>
+                                </div>
+                                <div class="asset-option" data-value="laptop-001">
+                                    <input type="checkbox" id="asset-laptop-001" class="asset-checkbox">
+                                    <label for="asset-laptop-001">Laptop 001</label>
+                                </div>
+                                <div class="asset-option" data-value="tablet-001">
+                                    <input type="checkbox" id="asset-tablet-001" class="asset-checkbox">
+                                    <label for="asset-tablet-001">Tablet 001</label>
+                                </div>
+                                <div class="asset-option" data-value="generator-001">
+                                    <input type="checkbox" id="asset-generator-001" class="asset-checkbox">
+                                    <label for="asset-generator-001">Generator 001</label>
+                                </div>
+                                <div class="asset-option" data-value="compressor-001">
+                                    <input type="checkbox" id="asset-compressor-001" class="asset-checkbox">
+                                    <label for="asset-compressor-001">Air Compressor 001</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="add-field-buttons">
+                    <button type="button" class="add-field-btn" id="addSiteFieldBtn">
+                        <span class="plus-icon">+</span>
+                        <span>Add site field</span>
+                    </button>
+                    
+                    <button type="button" class="add-field-btn" id="addAssetFieldBtn">
+                        <span class="plus-icon">+</span>
+                        <span>Add asset field</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="info-message">
+                <div class="info-icon">ℹ️</div>
+                <div class="info-text">
+                    Please note that not pre-filling the category or the site field allows anyone to view and select categories and sites in your organization when reporting issues via QR codes.
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="cancelCreateBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn">💬</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="qrcodes.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Profile - Issues Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="issue-profile.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="nav-item active" onclick="window.location.href='index.html'">Issues</div>
+            <div class="nav-item" onclick="window.location.href='categories.html'">Categories</div>
+            <div class="nav-item" onclick="window.location.href='qrcodes.html'">QR codes</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <span class="user-icon">🔥</span>
+                    <span class="user-name">Duncan Asset...</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Search</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">AI Assistant</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Notifications</span>
+                        <span class="notification-badge">99+</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Templates</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Inspections</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Schedules</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">Actions</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Training</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Assets</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Contractors</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                        <span class="new-badge">NEW</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Documents</span>
+                    </a>
+                    <a href="index.html" class="nav-link active">
+                        <span class="nav-icon">⚠️</span>
+                        <span class="nav-text">Issues</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Investigations</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">❓</span>
+                        <span class="nav-text">Help</span>
+                        <span class="nav-arrow">›</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏢</span>
+                        <span class="nav-text">Duncan Assets ...</span>
+                        <span class="nav-arrow">›</span>
+                        <div class="sub-text">Duncan Heuer</div>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content issue-profile-main">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html" class="breadcrumb-link">Issues</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current" id="issueTitleBreadcrumb">Car is broken</span>
+            </div>
+            
+            <!-- Header -->
+            <div class="issue-header">
+                <div class="issue-header-left">
+                    <div class="issue-id" id="issueIdHeader">IS-1</div>
+                    <h1 class="issue-title" id="issueTitleHeader">Car is broken</h1>
+                    <div class="issue-status">
+                        <span class="status-tag open" id="issueStatusTag">Open</span>
+                    </div>
+                </div>
+                <div class="issue-header-right">
+                    <button class="header-btn">⋯</button>
+                    <button class="header-btn share-btn">Share</button>
+                    <button class="header-btn add-btn">+ Add</button>
+                </div>
+            </div>
+            
+            <!-- Content Layout -->
+            <div class="issue-content">
+                <!-- Left Panel -->
+                <div class="left-panel">
+                    <!-- Description -->
+                    <div class="description-section">
+                        <textarea class="description-input" placeholder="Add description" id="issueDescription"></textarea>
+                    </div>
+                    
+                    <!-- Details -->
+                    <div class="details-section">
+                        <div class="detail-item">
+                            <label>Category</label>
+                            <div class="detail-value">
+                                <span class="category-tag observation" id="issueCategoryTag">Observation</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label>Site</label>
+                            <div class="detail-value">
+                                <span class="site-link" id="issueSite">Bondi Beach</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label>Linked Assets</label>
+                            <div class="detail-value">
+                                <div class="linked-assets" id="linkedAssets">
+                                    <!-- Assets will be populated here -->
+                                </div>
+                                <button class="add-asset-btn" id="addAssetBtn">+ Add asset</button>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label>Assignee</label>
+                            <div class="detail-value">
+                                <button class="add-assignee-btn" id="addAssigneeBtn">+ Add assignee</button>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label>Priority</label>
+                            <div class="detail-value">
+                                <span class="priority-none" id="issuePriority">None</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label>Due date</label>
+                            <div class="detail-value">
+                                <button class="add-due-date-btn" id="addDueDateBtn">📅 Add due date</button>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label>Date occurred</label>
+                            <div class="detail-value">
+                                <span class="date-occurred" id="dateOccurred">📅 27 Jul 2022 15:14</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer -->
+                    <div class="issue-footer">
+                        <span class="created-by" id="createdBy">Created by Duncan Heuer • 27 Jul 2022 15:14</span>
+                    </div>
+                </div>
+                
+                <!-- Right Panel -->
+                <div class="right-panel">
+                    <!-- Tabs -->
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="files">Files</button>
+                        <button class="tab-btn" data-tab="activity">Activity</button>
+                    </div>
+                    
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <!-- Overview Tab -->
+                        <div class="tab-panel active" id="overview-panel">
+                            <div class="location-section">
+                                <div class="location-header">
+                                    <h3>Location</h3>
+                                    <button class="edit-location-btn">✏️</button>
+                                </div>
+                                <div class="location-address" id="locationAddress">
+                                    19 Comber St, Paddington NSW 2021, Australia
+                                </div>
+                                <div class="map-container">
+                                    <div class="map-placeholder">
+                                        <div class="map-pin">📍</div>
+                                        <span>Interactive Map</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="files-section">
+                                <div class="files-header">
+                                    <h3>Files</h3>
+                                    <button class="view-all-btn">View all</button>
+                                </div>
+                                <div class="files-grid">
+                                    <div class="file-item">
+                                        <div class="file-placeholder">📄</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="linked-inspections-section">
+                                <div class="section-header">
+                                    <h3>Linked inspections</h3>
+                                    <button class="add-inspection-btn">+</button>
+                                </div>
+                                <div class="no-inspections">
+                                    <div class="no-inspections-icon">📋</div>
+                                    <div class="no-inspections-text">
+                                        <strong>No linked inspections</strong>
+                                        <p>You have no linked inspections to this issue</p>
+                                    </div>
+                                    <button class="start-inspection-btn">+ Start inspection</button>
+                                </div>
+                            </div>
+                            
+                            <div class="linked-actions-section">
+                                <div class="section-header">
+                                    <h3>Linked actions</h3>
+                                    <button class="add-action-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Files Tab -->
+                        <div class="tab-panel" id="files-panel">
+                            <div class="files-content">
+                                <p>Files content will be displayed here</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Tab -->
+                        <div class="tab-panel" id="activity-panel">
+                            <div class="activity-content">
+                                <!-- Activity Filter Tabs -->
+                                <div class="activity-filter-tabs">
+                                    <button class="activity-filter-btn active" data-filter="all">All</button>
+                                    <button class="activity-filter-btn" data-filter="comments">Comments</button>
+                                    <button class="activity-filter-btn" data-filter="history">History</button>
+                                </div>
+                                
+                                <!-- Activity Timeline -->
+                                <div class="activity-timeline" id="activityTimeline">
+                                    <!-- Activity items will be populated here -->
+                                </div>
+                                
+                                <!-- Add Update Input -->
+                                <div class="add-update-section">
+                                    <div class="update-input-container">
+                                        <input type="text" class="update-input" id="updateInput" placeholder="Add an update...">
+                                        <button class="send-update-btn" id="sendUpdateBtn">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                <path d="M15.854 7.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708L14.293 8H.5a.5.5 0 0 1 0-1h13.793L8.146 1.854a.5.5 0 1 1 .708-.708l7 7z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Asset Selection Modal -->
+    <div class="modal-overlay" id="assetModalOverlay">
+        <div class="asset-modal">
+            <div class="modal-header">
+                <h3>Select Assets</h3>
+                <button class="modal-close-btn" id="closeAssetModal">×</button>
+            </div>
+            
+            <div class="modal-search">
+                <input type="text" class="modal-search-input" id="assetModalSearch" placeholder="Search assets...">
+            </div>
+            
+            <div class="modal-content">
+                <div class="asset-list" id="assetModalList">
+                    <!-- Asset options will be populated here -->
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <div class="selected-count" id="selectedCount">0 assets selected</div>
+                <div class="modal-actions">
+                    <button class="btn-secondary" id="cancelAssetSelection">Cancel</button>
+                    <button class="btn-primary" id="confirmAssetSelection">Add Selected Assets</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn">💬</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="issue-profile.js"></script>
+</body>
+</html>

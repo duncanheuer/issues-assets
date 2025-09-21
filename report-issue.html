@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issue - Issues Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="report-issue.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="nav-item active">Issues</div>
+            <div class="nav-item">Categories</div>
+            <div class="nav-item">QR codes</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <span class="user-icon">🔥</span>
+                    <span class="user-name">Duncan Asset...</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Search</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">AI Assistant</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Notifications</span>
+                        <span class="notification-badge">99+</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Templates</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Inspections</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Schedules</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">Actions</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Training</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Assets</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Contractors</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                        <span class="new-badge">NEW</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Documents</span>
+                    </a>
+                    <a href="index.html" class="nav-link active">
+                        <span class="nav-icon">⚠️</span>
+                        <span class="nav-text">Issues</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Investigations</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">❓</span>
+                        <span class="nav-text">Help</span>
+                        <span class="nav-arrow">›</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏢</span>
+                        <span class="nav-text">Duncan Assets ...</span>
+                        <span class="nav-arrow">›</span>
+                        <div class="sub-text">Duncan Heuer</div>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content report-issue-main">
+            <div class="report-header">
+                <a href="index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    <span>Back</span>
+                </a>
+                <h1>Report issue</h1>
+            </div>
+            
+            <div class="report-form-container">
+                <form class="report-form" id="reportForm">
+                    <div class="form-group">
+                        <label for="issueDate">Date</label>
+                        <input type="text" id="issueDate" name="issueDate" value="21 Sep 2025" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issueType">What type of issue?</label>
+                        <div class="select-wrapper">
+                            <select id="issueType" name="issueType" required>
+                                <option value="">Select a category</option>
+                                <option value="car-crash">Car Crash</option>
+                                <option value="hazard">Hazard</option>
+                                <option value="observation">Observation</option>
+                                <option value="site-sign-off">Site Sign Off</option>
+                                <option value="site-sign-on">Site Sign On</option>
+                                <option value="equipment-failure">Equipment Failure</option>
+                                <option value="safety-concern">Safety Concern</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issueTitle">Issue Title</label>
+                        <input type="text" id="issueTitle" name="issueTitle" placeholder="Brief description of the issue" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issueDescription">Description</label>
+                        <textarea id="issueDescription" name="issueDescription" placeholder="Provide detailed information about the issue..." rows="6" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issuePriority">Priority</label>
+                        <div class="priority-options">
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="low">
+                                <span class="priority-indicator low"></span>
+                                <span>Low</span>
+                            </label>
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="medium" checked>
+                                <span class="priority-indicator medium"></span>
+                                <span>Medium</span>
+                            </label>
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="high">
+                                <span class="priority-indicator high"></span>
+                                <span>High</span>
+                            </label>
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="critical">
+                                <span class="priority-indicator critical"></span>
+                                <span>Critical</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issueSite">Site</label>
+                        <div class="select-wrapper">
+                            <select id="issueSite" name="issueSite">
+                                <option value="">Select a site</option>
+                                <option value="cbd-hq">CBD HQ</option>
+                                <option value="bondi-beach">Bondi Beach</option>
+                                <option value="sydney-harbour">Sydney Harbour</option>
+                                <option value="parramatta">Parramatta</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issueAsset">Asset</label>
+                        <div class="multi-select-wrapper">
+                            <div class="multi-select-display" id="assetDisplay">
+                                <span class="placeholder">Select assets</span>
+                            </div>
+                            <div class="multi-select-dropdown" id="assetDropdown">
+                                <div class="asset-search-container">
+                                    <input type="text" class="asset-search" id="assetSearch" placeholder="Search assets...">
+                                </div>
+                                <div class="multi-select-option" data-value="vehicle-001">
+                                    <input type="checkbox" id="asset-vehicle-001" name="issueAsset" value="vehicle-001">
+                                    <label for="asset-vehicle-001">Vehicle 001 - Toyota Hilux</label>
+                                </div>
+                                <div class="multi-select-option" data-value="vehicle-002">
+                                    <input type="checkbox" id="asset-vehicle-002" name="issueAsset" value="vehicle-002">
+                                    <label for="asset-vehicle-002">Vehicle 002 - Ford Ranger</label>
+                                </div>
+                                <div class="multi-select-option" data-value="equipment-drill-01">
+                                    <input type="checkbox" id="asset-equipment-drill-01" name="issueAsset" value="equipment-drill-01">
+                                    <label for="asset-equipment-drill-01">Equipment - Drill 01</label>
+                                </div>
+                                <div class="multi-select-option" data-value="equipment-crane-a1">
+                                    <input type="checkbox" id="asset-equipment-crane-a1" name="issueAsset" value="equipment-crane-a1">
+                                    <label for="asset-equipment-crane-a1">Equipment - Crane A1</label>
+                                </div>
+                                <div class="multi-select-option" data-value="building-main">
+                                    <input type="checkbox" id="asset-building-main" name="issueAsset" value="building-main">
+                                    <label for="asset-building-main">Building - Main Office</label>
+                                </div>
+                                <div class="multi-select-option" data-value="building-warehouse">
+                                    <input type="checkbox" id="asset-building-warehouse" name="issueAsset" value="building-warehouse">
+                                    <label for="asset-building-warehouse">Building - Warehouse</label>
+                                </div>
+                                <div class="multi-select-option" data-value="machinery-excavator">
+                                    <input type="checkbox" id="asset-machinery-excavator" name="issueAsset" value="machinery-excavator">
+                                    <label for="asset-machinery-excavator">Machinery - Excavator</label>
+                                </div>
+                                <div class="multi-select-option" data-value="machinery-forklift">
+                                    <input type="checkbox" id="asset-machinery-forklift" name="issueAsset" value="machinery-forklift">
+                                    <label for="asset-machinery-forklift">Machinery - Forklift</label>
+                                </div>
+                                <div class="multi-select-option" data-value="safety-equipment">
+                                    <input type="checkbox" id="asset-safety-equipment" name="issueAsset" value="safety-equipment">
+                                    <label for="asset-safety-equipment">Safety Equipment</label>
+                                </div>
+                                <div class="multi-select-option" data-value="other">
+                                    <input type="checkbox" id="asset-other" name="issueAsset" value="other">
+                                    <label for="asset-other">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assignedTo">Assign to</label>
+                        <div class="select-wrapper">
+                            <select id="assignedTo" name="assignedTo">
+                                <option value="">Unassigned</option>
+                                <option value="duncan-heuer">Duncan Heuer</option>
+                                <option value="john-smith">John Smith</option>
+                                <option value="jane-doe">Jane Doe</option>
+                                <option value="mike-johnson">Mike Johnson</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attachments">Attachments</label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <input type="file" id="attachments" name="attachments" multiple accept="image/*,.pdf,.doc,.docx" hidden>
+                            <div class="upload-placeholder">
+                                <span class="upload-icon">📎</span>
+                                <span>Click to upload files or drag and drop</span>
+                                <small>Supports: Images, PDF, Word documents</small>
+                            </div>
+                            <div class="uploaded-files" id="uploadedFiles"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">Cancel</button>
+                        <button type="submit" class="btn-primary">Submit Issue</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn">💬</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="report-issue.js"></script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Category - Issues Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="edit-category.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <button class="back-btn" onclick="window.history.back()">
+                <span class="back-icon">←</span>
+                <span>Back</span>
+            </button>
+        </div>
+        <div class="nav-center">
+            <h2>Edit category</h2>
+        </div>
+        <div class="nav-right"></div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <div class="user-avatar">🔥</div>
+                    <div class="user-info">
+                        <div class="user-name">Duncan Asset...</div>
+                        <div class="user-role">Duncan Heuer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Search</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">AI Assistant</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Notifications</span>
+                        <span class="notification-badge">999</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Templates</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Inspections</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Schedules</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">Actions</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Training</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Assets</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Contractors</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                        <span class="new-badge">NEW</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Documents</span>
+                    </a>
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">⚠️</span>
+                        <span class="nav-text">Issues</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Investigations</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">❓</span>
+                        <span class="nav-text">Help</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Duncan Assets ...</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="edit-category-container">
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="workflow">Workflow</button>
+                    <button class="tab-btn" data-tab="access">Access</button>
+                </div>
+
+                <!-- Category Form -->
+                <form class="category-form" id="categoryForm">
+                    <!-- Category Name Section -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h3>Category name</h3>
+                            <button type="button" class="edit-name-btn">Edit name</button>
+                        </div>
+                        <div class="category-name-display" id="categoryNameDisplay">
+                            <span id="categoryNameText">Damage</span>
+                        </div>
+                        <div class="category-name-edit" id="categoryNameEdit" style="display: none;">
+                            <input type="text" class="form-input" id="categoryNameInput" value="Damage">
+                            <div class="edit-actions">
+                                <button type="button" class="btn-secondary" id="cancelNameEdit">Cancel</button>
+                                <button type="button" class="btn-primary" id="saveNameEdit">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Section -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h3>Notifications</h3>
+                        </div>
+                        <p class="section-description">
+                            Automatically notify the following people when reporting this category.
+                        </p>
+                        
+                        <div class="notification-settings">
+                            <label class="form-label">Send a notification to:</label>
+                            <div class="notification-status">
+                                <span class="status-badge">No one will be notified</span>
+                            </div>
+                            
+                            <div class="notification-details">
+                                <h4>Email notification settings</h4>
+                                <div class="notification-option">
+                                    <input type="radio" id="private" name="notification-type" value="private" checked>
+                                    <label for="private">
+                                        <strong>Private (default)</strong><br>
+                                        <span class="option-description">Email notifications will only include the issue title, category, reporter and reported time.</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="notification-note">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span>Setting a notification will allow anyone to see email access. To remove others, recipients must have notification access to remove them.</span>
+                                </div>
+                                
+                                <button type="button" class="btn-link" id="editNotifications">Edit notifications</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Critical Alert Notifications Section -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h3>Critical Alert notifications</h3>
+                        </div>
+                        <p class="section-description">
+                            Automatically notify the following people when a "Critical Alert" issue is reported. Critical Alert notifications override silent mode and are to be used when a serious incident has occurred.
+                        </p>
+                        
+                        <div class="notification-settings">
+                            <label class="form-label">Send a notification to:</label>
+                            <div class="notification-status">
+                                <span class="status-badge">No one will be notified</span>
+                            </div>
+                            
+                            <div class="notification-note">
+                                <span class="info-icon">ℹ️</span>
+                                <span>Setting a notification will allow anyone to see email access. To remove others, recipients must have notification access to remove them.</span>
+                            </div>
+                            
+                            <button type="button" class="btn-link" id="editCriticalNotifications">Edit notifications</button>
+                        </div>
+                    </div>
+
+                    <!-- Issue Fields Section -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h3>Issue fields</h3>
+                        </div>
+                        <p class="section-description">
+                            These fields can be automatically or manually captured when an issue is initially reported.
+                        </p>
+                        
+                        <div class="issue-fields-list">
+                            <div class="field-item">
+                                <div class="field-header">
+                                    <div class="field-info">
+                                        <span class="field-icon">🔒</span>
+                                        <span class="field-name">Title (required)</span>
+                                    </div>
+                                    <button class="field-action-btn" disabled>
+                                        <span class="lock-icon">🔒</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="field-item">
+                                <div class="field-info">
+                                    <span class="field-icon">📝</span>
+                                    <span class="field-name">Description</span>
+                                </div>
+                                <button class="field-action-btn" data-field="description">
+                                    <span class="edit-icon">✏️</span>
+                                </button>
+                                <div class="field-config-panel" id="config-description" style="display: none;">
+                                    <div class="config-options">
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="enable-field-toggle" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Enable field</span>
+                                        </div>
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="required-field-toggle">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="config-actions">
+                                        <button type="button" class="btn-primary config-save">Save</button>
+                                        <button type="button" class="btn-secondary config-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field-item">
+                                <div class="field-info">
+                                    <span class="field-icon">🏷️</span>
+                                    <span class="field-name">Site</span>
+                                </div>
+                                <button class="field-action-btn" data-field="site">
+                                    <span class="edit-icon">✏️</span>
+                                </button>
+                                <div class="field-config-panel" id="config-site" style="display: none;">
+                                    <div class="config-options">
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="enable-field-toggle" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Enable field</span>
+                                        </div>
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="required-field-toggle">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="config-actions">
+                                        <button type="button" class="btn-primary config-save">Save</button>
+                                        <button type="button" class="btn-secondary config-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field-item">
+                                <div class="field-info">
+                                    <span class="field-icon">📦</span>
+                                    <span class="field-name">Asset</span>
+                                </div>
+                                <button class="field-action-btn" data-field="asset">
+                                    <span class="edit-icon">✏️</span>
+                                </button>
+                                <div class="field-config-panel" id="config-asset" style="display: none;">
+                                    <div class="config-options">
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="enable-field-toggle" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Enable field</span>
+                                        </div>
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="required-field-toggle">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="config-actions">
+                                        <button type="button" class="btn-primary config-save">Save</button>
+                                        <button type="button" class="btn-secondary config-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field-item">
+                                <div class="field-info">
+                                    <span class="field-icon">📷</span>
+                                    <span class="field-name">Image and video</span>
+                                </div>
+                                <button class="field-action-btn" data-field="image-video">
+                                    <span class="edit-icon">✏️</span>
+                                </button>
+                                <div class="field-config-panel" id="config-image-video" style="display: none;">
+                                    <div class="config-options">
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="enable-field-toggle" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Enable field</span>
+                                        </div>
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="required-field-toggle">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="config-actions">
+                                        <button type="button" class="btn-primary config-save">Save</button>
+                                        <button type="button" class="btn-secondary config-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field-item">
+                                <div class="field-info">
+                                    <span class="field-icon">📍</span>
+                                    <span class="field-name">Location</span>
+                                </div>
+                                <button class="field-action-btn" data-field="location">
+                                    <span class="edit-icon">✏️</span>
+                                </button>
+                                <div class="field-config-panel" id="config-location" style="display: none;">
+                                    <div class="config-options">
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="enable-field-toggle" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Enable field</span>
+                                        </div>
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="required-field-toggle">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="config-actions">
+                                        <button type="button" class="btn-primary config-save">Save</button>
+                                        <button type="button" class="btn-secondary config-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field-item">
+                                <div class="field-info">
+                                    <span class="field-icon">📅</span>
+                                    <span class="field-name">Date Occurred (disabled)</span>
+                                </div>
+                                <button class="field-action-btn" data-field="date-occurred">
+                                    <span class="edit-icon">✏️</span>
+                                </button>
+                                <div class="field-config-panel" id="config-date-occurred" style="display: none;">
+                                    <div class="config-options">
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="enable-field-toggle">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Enable field</span>
+                                        </div>
+                                        <div class="config-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" class="required-field-toggle">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <span class="option-label">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="config-actions">
+                                        <button type="button" class="btn-primary config-save">Save</button>
+                                        <button type="button" class="btn-secondary config-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Questions Section -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h3>Custom questions</h3>
+                        </div>
+                        <p class="section-description">
+                            Automatically ask these questions when an issue is reported.
+                        </p>
+                        
+                        <div class="custom-questions-list">
+                            <div class="question-item">
+                                <div class="question-info">
+                                    <span class="question-icon">📝</span>
+                                    <span class="question-text">What needs to be done?</span>
+                                </div>
+                                <div class="question-actions">
+                                    <button class="question-action-btn">
+                                        <span class="edit-icon">✏️</span>
+                                    </button>
+                                    <button class="question-action-btn">
+                                        <span class="delete-icon">🗑️</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="question-item">
+                                <div class="question-info">
+                                    <span class="question-icon">📝</span>
+                                    <span class="question-text">What caused it?</span>
+                                </div>
+                                <div class="question-actions">
+                                    <button class="question-action-btn">
+                                        <span class="edit-icon">✏️</span>
+                                    </button>
+                                    <button class="question-action-btn">
+                                        <span class="delete-icon">🗑️</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="add-question-note">
+                            <span class="info-icon">ℹ️</span>
+                            <span>Add up to 10 custom questions to be shown to all users when they are reporting an issue in this category. These questions are required - users are asked to respond to all questions before submitting their report.</span>
+                        </div>
+                        
+                        <button type="button" class="btn-link" id="addQuestionBtn">
+                            <span class="plus-icon">+</span>
+                            <span>Add question</span>
+                        </button>
+                    </div>
+
+                    <!-- Link Templates Section -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h3>Link templates</h3>
+                            <button type="button" class="btn-primary-small">Add</button>
+                        </div>
+                        <p class="section-description">
+                            Automatically show these templates for users to quickly start inspections from issues related to this category.
+                        </p>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="window.history.back()">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Category</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn">💬</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="edit-category.js"></script>
+</body>
+</html>

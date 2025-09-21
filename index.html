@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="nav-item active">Issues</div>
+            <div class="nav-item" onclick="window.location.href='categories.html'">Categories</div>
+            <div class="nav-item" onclick="window.location.href='qrcodes.html'">QR codes</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <span class="user-icon">🔥</span>
+                    <span class="user-name">Duncan Asset...</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Search</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">AI Assistant</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Notifications</span>
+                        <span class="notification-badge">99+</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Templates</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Inspections</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Schedules</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">Actions</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Training</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Assets</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Contractors</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                        <span class="new-badge">NEW</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Documents</span>
+                    </a>
+                    <a href="#" class="nav-link active">
+                        <span class="nav-icon">⚠️</span>
+                        <span class="nav-text">Issues</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Investigations</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">❓</span>
+                        <span class="nav-text">Help</span>
+                        <span class="nav-arrow">›</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏢</span>
+                        <span class="nav-text">Duncan Assets ...</span>
+                        <span class="nav-arrow">›</span>
+                        <div class="sub-text">Duncan Heuer</div>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Issues</h1>
+                <button class="report-issue-btn">+ Report Issue</button>
+            </div>
+            
+            <div class="filters-section">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All</button>
+                    <button class="filter-tab-add">+</button>
+                </div>
+                
+                <div class="search-and-filters">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search">
+                        <button class="add-filter-btn">+ Add filter</button>
+                    </div>
+                    <div class="results-info">
+                        <span>7 results</span>
+                        <button class="sort-btn">⬇️</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="issues-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-column="unique-id">Unique ID</th>
+                            <th data-column="issue">Issue</th>
+                            <th data-column="category">Category</th>
+                            <th data-column="status">Status</th>
+                            <th data-column="priority">Priority</th>
+                            <th data-column="modified-date">Modified date <span class="sort-arrow">⬇️</span></th>
+                            <th data-column="assigned-to">Assigned to</th>
+                            <th data-column="site">Site</th>
+                            <th data-column="assets">Assets</th>
+                            <th class="column-settings">
+                                <button class="column-settings-btn" id="columnSettingsBtn">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                                        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                                    </svg>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="issue-row" data-id="IS-15">
+                            <td class="issue-id">IS-15</td>
+                            <td class="issue-title">test documents</td>
+                            <td><span class="category-tag car-crash">Car Crash</span></td>
+                            <td><span class="status-tag open">Open</span></td>
+                            <td class="priority"></td>
+                            <td class="modified-date">14 days ago</td>
+                            <td class="assigned">Unassigned</td>
+                            <td class="site"></td>
+                            <td class="assets"></td>
+                            <td class="actions">
+                                <button class="action-btn">⋯</button>
+                            </td>
+                        </tr>
+                        <tr class="issue-row" data-id="IS-13">
+                            <td class="issue-id">IS-13</td>
+                            <td class="issue-title">Test hazrd</td>
+                            <td><span class="category-tag hazard">Hazard</span></td>
+                            <td><span class="status-tag open">Open</span></td>
+                            <td class="priority"></td>
+                            <td class="modified-date">1 year ago</td>
+                            <td class="assigned">Unassigned</td>
+                            <td class="site"></td>
+                            <td class="assets"></td>
+                            <td class="actions">
+                                <button class="action-btn">⋯</button>
+                            </td>
+                        </tr>
+                        <tr class="issue-row" data-id="IS-5">
+                            <td class="issue-id">IS-5</td>
+                            <td class="issue-title">Something is wrong with the pri...</td>
+                            <td><span class="category-tag observation">Observation</span></td>
+                            <td><span class="status-tag open">Open</span></td>
+                            <td class="priority"></td>
+                            <td class="modified-date">2 years ago</td>
+                            <td class="assigned">Unassigned</td>
+                            <td class="site">CBD HQ</td>
+                            <td class="assets">Vehicle 001</td>
+                            <td class="actions">
+                                <button class="action-btn">⋯</button>
+                            </td>
+                        </tr>
+                        <tr class="issue-row" data-id="IS-4">
+                            <td class="issue-id">IS-4</td>
+                            <td class="issue-title">Test Issue - GDPR</td>
+                            <td><span class="category-tag observation">Observation</span></td>
+                            <td><span class="status-tag open">Open</span></td>
+                            <td class="priority"></td>
+                            <td class="modified-date">2 years ago</td>
+                            <td class="assigned">Unassigned</td>
+                            <td class="site"></td>
+                            <td class="assets"></td>
+                            <td class="actions">
+                                <button class="action-btn">⋯</button>
+                            </td>
+                        </tr>
+                        <tr class="issue-row" data-id="IS-3">
+                            <td class="issue-id">IS-3</td>
+                            <td class="issue-title">Singing off</td>
+                            <td><span class="category-tag site-sign-off">Site Sign Off</span></td>
+                            <td><span class="status-tag resolved">Resolved</span></td>
+                            <td class="priority"></td>
+                            <td class="modified-date">2 years ago</td>
+                            <td class="assigned">Unassigned</td>
+                            <td class="site"></td>
+                            <td class="assets"></td>
+                            <td class="actions">
+                                <button class="action-btn">⋯</button>
+                            </td>
+                        </tr>
+                        <tr class="issue-row" data-id="IS-2">
+                            <td class="issue-id">IS-2</td>
+                            <td class="issue-title">Signing on</td>
+                            <td><span class="category-tag site-sign-on">Site Sign On</span></td>
+                            <td><span class="status-tag resolved">Resolved</span></td>
+                            <td class="priority"></td>
+                            <td class="modified-date">2 years ago</td>
+                            <td class="assigned">Unassigned</td>
+                            <td class="site">Bondi Beach</td>
+                            <td class="assets"></td>
+                            <td class="actions">
+                                <button class="action-btn">⋯</button>
+                            </td>
+                        </tr>
+                        <tr class="issue-row" data-id="IS-1">
+                            <td class="issue-id">IS-1</td>
+                            <td class="issue-title">Car is broken</td>
+                            <td><span class="category-tag observation">Observation</span></td>
+                            <td><span class="status-tag open">Open</span></td>
+                            <td class="priority"></td>
+                            <td class="modified-date">3 years ago</td>
+                            <td class="assigned">Unassigned</td>
+                            <td class="site">Bondi Beach</td>
+                            <td class="assets">Vehicle 001</td>
+                            <td class="actions">
+                                <button class="action-btn">⋯</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Column Settings Dropdown -->
+    <div class="column-settings-dropdown" id="columnSettingsDropdown">
+        <div class="column-settings-header">
+            <h4>Show / hide columns</h4>
+        </div>
+        <div class="column-settings-content">
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="unique-id" checked>
+                <span>Unique ID</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="issue" checked>
+                <span>Issue</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="category" checked>
+                <span>Category</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="status" checked>
+                <span>Status</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="priority" checked>
+                <span>Priority</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="modified-date" checked>
+                <span>Modified date</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="assigned-to" checked>
+                <span>Assigned to</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="site" checked>
+                <span>Site</span>
+            </label>
+            <label class="column-setting-item">
+                <input type="checkbox" data-column="assets" checked>
+                <span>Assets</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn">💬</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

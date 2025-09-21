@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Issues Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="categories.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="nav-item" onclick="window.location.href='index.html'">Issues</div>
+            <div class="nav-item active">Categories</div>
+            <div class="nav-item" onclick="window.location.href='qrcodes.html'">QR codes</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <div class="user-avatar">🔥</div>
+                    <div class="user-info">
+                        <div class="user-name">Duncan Asset...</div>
+                        <div class="user-role">Duncan Heuer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Search</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">AI Assistant</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Notifications</span>
+                        <span class="notification-badge">999</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Templates</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Inspections</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Schedules</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">Actions</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Training</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Assets</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Contractors</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                        <span class="new-badge">NEW</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📄</span>
+                        <span class="nav-text">Documents</span>
+                    </a>
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">⚠️</span>
+                        <span class="nav-text">Issues</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-text">Investigations</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">❓</span>
+                        <span class="nav-text">Help</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Duncan Assets ...</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Manage issue categories</h1>
+                <button class="btn-primary" id="addCategoryBtn">
+                    <span>+ Add category</span>
+                </button>
+            </div>
+
+            <div class="categories-container">
+                <!-- Search Bar -->
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="categorySearch" placeholder="Search">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="results-count">
+                        <span id="resultsCount">14 results</span>
+                    </div>
+                </div>
+
+                <!-- Categories Table -->
+                <div class="categories-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="sortable" data-sort="name">
+                                    <span>Category name</span>
+                                    <span class="sort-arrow">↕</span>
+                                </th>
+                                <th>Category access</th>
+                                <th>Notify</th>
+                                <th class="actions-column"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="categoriesTableBody">
+                            <tr class="category-row" data-id="asst-driller-syd">
+                                <td class="category-name">Asst Driller SYD</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="asst-driller-syd">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="car-crash">
+                                <td class="category-name">Car Crash</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="car-crash">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="hazard">
+                                <td class="category-name">Hazard</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="hazard">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="incident">
+                                <td class="category-name">Incident</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="incident">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="maintenance">
+                                <td class="category-name">Maintenance</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="maintenance">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="manager">
+                                <td class="category-name">Manager</td>
+                                <td class="category-access">Disabled</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="manager">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="near-miss">
+                                <td class="category-name">Near Miss</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="near-miss">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="new-cat">
+                                <td class="category-name">New Cat</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="new-cat">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="observation">
+                                <td class="category-name">Observation</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="observation">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="praise">
+                                <td class="category-name">Praise</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="praise">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="property-damage">
+                                <td class="category-name">Property Damage</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="property-damage">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="site-sign-off">
+                                <td class="category-name">Site Sign off</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">1 user</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="site-sign-off">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="site-sign-on">
+                                <td class="category-name">Site Sign On</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">1 user</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="site-sign-on">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                            <tr class="category-row" data-id="test-category">
+                                <td class="category-name">Test category</td>
+                                <td class="category-access">All users</td>
+                                <td class="category-notify">None</td>
+                                <td class="category-actions">
+                                    <button class="edit-category-btn" data-id="test-category">Edit category</button>
+                                    <button class="action-menu-btn">⋯</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn">💬</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="categories.js"></script>
+</body>
+</html>
